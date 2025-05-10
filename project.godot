@@ -1,0 +1,56 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Vinr - Valheim Server Config"
+config/description="A Valheim Server Configuration Tool"
+config/version="0.0.1"
+run/main_scene="uid://da6ytqwxbuxgi"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="Vinr"
+config/features=PackedStringArray("4.5", "GL Compatibility")
+boot_splash/bg_color=Color(0.0941176, 0.0941176, 0.0941176, 1)
+boot_splash/show_image=false
+config/icon="uid://c0wmoy8tjojcy"
+config/macos_native_icon="res://textures/logo_black.icns"
+config/windows_native_icon="res://textures/logo_black.ico"
+
+[boot_splash]
+
+minimum_display_time=0.1
+
+[debug]
+
+gdscript/warnings/unused_parameter=0
+gdscript/warnings/unused_signal=0
+gdscript/warnings/narrowing_conversion=0
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=1280
+window/subwindows/embed_subwindows=false
+window/per_pixel_transparency/allowed=true
+window/ios/hide_home_indicator=false
+window/ios/hide_status_bar=false
+window/ios/suppress_ui_gesture=false
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter="nearest"
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(0.0941176, 0.0941176, 0.0941176, 1)

@@ -1,0 +1,902 @@
+[gd_scene load_steps=6 format=3 uid="uid://da6ytqwxbuxgi"]
+
+[ext_resource type="Theme" uid="uid://dw0mdgoem0g63" path="res://default.tres" id="1_0xm2m"]
+[ext_resource type="Script" uid="uid://iv2xlo2beggp" path="res://main.gd" id="1_ig7tw"]
+
+[sub_resource type="SystemFont" id="SystemFont_0xm2m"]
+font_names = PackedStringArray("Serif")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.0666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0, 0, 0, 0.835294)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.129558, 0.129559, 0.129558, 1)
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_0xm2m")
+script = ExtResource("1_ig7tw")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TabContainer" type="TabContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+tab_alignment = 1
+current_tab = 1
+
+[node name="Basic" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 16
+metadata/_tab_index = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ConfigurationOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="ServerName" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/ServerName"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Name"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/ServerName"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="server_name" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/ServerName"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "My server"
+caret_blink = true
+
+[node name="Password" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Password"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Password"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Password"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="password" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Password"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Secret"
+caret_blink = true
+
+[node name="Public" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Public"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Public"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Public"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="public" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Public"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/icon_max_width = 64
+button_pressed = true
+icon_alignment = 1
+
+[node name="Crossplay" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Crossplay"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Crossplay"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Crossplay"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="crossplay" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Crossplay"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/icon_max_width = 64
+icon_alignment = 1
+
+[node name="Advanced" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+metadata/_tab_index = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ConfigurationOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="WorldName" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/WorldName"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "World Name"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/WorldName"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="world" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/WorldName"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="ValheimPath" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/ValheimPath"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Server path"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/ValheimPath"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="valheim_directory" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/ValheimPath"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/ValheimPath"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="ValheimPathBrowseButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/ValheimPath"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Browse"
+
+[node name="SaveDir" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveDir"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "World Directory"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveDir"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="save_dir" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveDir"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveDir"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="SaveDirBrowseButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveDir"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Browse"
+
+[node name="Port" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Port"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Port"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Port"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="port" type="SpinBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Port"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+max_value = 99999.0
+value = 2456.0
+alignment = 1
+
+[node name="InstanceId" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/InstanceId"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Instance Id"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/InstanceId"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="instance_id" type="SpinBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/InstanceId"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+value = 1.0
+alignment = 1
+
+[node name="Backups" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Backups"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Backups"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Backups"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="backups" type="SpinBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Backups"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+value = 4.0
+alignment = 1
+
+[node name="SaveInterval" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveInterval"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Save Interval"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveInterval"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="save_interval" type="SpinBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveInterval"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+max_value = 9999.0
+value = 1800.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveInterval"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Hint" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveInterval"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.203922)
+text = "In seconds"
+vertical_alignment = 1
+
+[node name="BackupShort" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupShort"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Backup Short"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupShort"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="backup_short" type="SpinBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupShort"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+max_value = 99999.0
+value = 7200.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupShort"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Hint" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupShort"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.203922)
+text = "In seconds"
+vertical_alignment = 1
+
+[node name="BackupLong" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupLong"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Backup Long"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupLong"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="backup_long" type="SpinBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupLong"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(256, 0)
+layout_mode = 2
+max_value = 99999.0
+value = 43200.0
+alignment = 1
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupLong"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Hint" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupLong"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.203922)
+text = "In seconds"
+vertical_alignment = 1
+
+[node name="World Options" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_top = 16
+metadata/_tab_index = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="ConfigurationOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Preset" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Preset"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Preset"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="preset" type="OptionButton" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Preset"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 0)
+layout_mode = 2
+theme_override_constants/icon_max_width = 48
+alignment = 1
+selected = 0
+item_count = 7
+popup/item_0/text = "Normal"
+popup/item_0/id = 0
+popup/item_1/text = "Casual"
+popup/item_1/id = 1
+popup/item_2/text = "Easy"
+popup/item_2/id = 2
+popup/item_3/text = "Hard"
+popup/item_3/id = 3
+popup/item_4/text = "Hardcore"
+popup/item_4/id = 4
+popup/item_5/text = "Immersive"
+popup/item_5/id = 5
+popup/item_6/text = "Hammer"
+popup/item_6/id = 6
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Preset"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Combat" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Combat"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Combat"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="combat" type="OptionButton" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Combat"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 0)
+layout_mode = 2
+theme_override_constants/icon_max_width = 48
+alignment = 1
+selected = 1
+item_count = 4
+popup/item_0/text = "Very Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Easy"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
+popup/item_3/text = "Very Hard"
+popup/item_3/id = 3
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Combat"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="DeathPenalty" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/DeathPenalty"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Death Penalty"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="death_penalty" type="OptionButton" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/DeathPenalty"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 0)
+layout_mode = 2
+theme_override_constants/icon_max_width = 48
+alignment = 1
+selected = 2
+item_count = 5
+popup/item_0/text = "Casual"
+popup/item_0/id = 0
+popup/item_1/text = "Very Easy"
+popup/item_1/id = 1
+popup/item_2/text = "Easy"
+popup/item_2/id = 2
+popup/item_3/text = "Hard"
+popup/item_3/id = 3
+popup/item_4/text = "Hardcore"
+popup/item_4/id = 4
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/DeathPenalty"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Resources" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Resources"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Resources"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="resources" type="OptionButton" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Resources"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 0)
+layout_mode = 2
+theme_override_constants/icon_max_width = 48
+alignment = 1
+selected = 1
+item_count = 5
+popup/item_0/text = "Much less"
+popup/item_0/id = 0
+popup/item_1/text = "Less"
+popup/item_1/id = 1
+popup/item_2/text = "More"
+popup/item_2/id = 2
+popup/item_3/text = "Much More"
+popup/item_3/id = 3
+popup/item_4/text = "Most"
+popup/item_4/id = 4
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Resources"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Raids" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Raids"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Raids"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="raids" type="OptionButton" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Raids"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 0)
+layout_mode = 2
+theme_override_constants/icon_max_width = 48
+alignment = 1
+selected = 2
+item_count = 5
+popup/item_0/text = "None"
+popup/item_0/id = 0
+popup/item_1/text = "Much Less"
+popup/item_1/id = 1
+popup/item_2/text = "Less"
+popup/item_2/id = 2
+popup/item_3/text = "More"
+popup/item_3/id = 3
+popup/item_4/text = "Much More"
+popup/item_4/id = 4
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Raids"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Portals" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Portals"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Portals"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="portals" type="OptionButton" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Portals"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(337, 0)
+layout_mode = 2
+theme_override_constants/icon_max_width = 48
+alignment = 1
+selected = 1
+item_count = 3
+popup/item_0/text = "Casual"
+popup/item_0/id = 0
+popup/item_1/text = "Hard"
+popup/item_1/id = 1
+popup/item_2/text = "Very Hard"
+popup/item_2/id = 2
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Portals"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Events" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "events"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="set_key" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 16
+columns = 2
+
+[node name="nobuildcost" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events/set_key"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/icon_max_width = 64
+text = "No build Cost"
+icon_alignment = 1
+
+[node name="playerevents" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events/set_key"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/icon_max_width = 64
+text = "Player Events"
+icon_alignment = 1
+
+[node name="passivemobs" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events/set_key"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/icon_max_width = 64
+text = "Passive Mobs"
+icon_alignment = 1
+
+[node name="nomap" type="CheckBox" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events/set_key"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/icon_max_width = 64
+text = "No Map"
+icon_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="OutputLog" type="TextEdit" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 170)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("SystemFont_0xm2m")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/focus = SubResource("StyleBoxFlat_0xm2m")
+theme_override_styles/read_only = SubResource("StyleBoxFlat_0xm2m")
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+drag_and_drop_selection_enabled = false
+empty_selection_clipboard_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/OutputLog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer/HBoxContainer/OutputLog/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="CopiedLabel" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/OutputLog/MarginContainer/CenterContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "Copied to clipboard!"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="CopyOutputButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Copy"
+
+[node name="ClearOutputButton" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Clear"
+
+[node name="Spacer3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+alignment = 1
+
+[node name="CreateScriptButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "Create Script"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="OpenValheimDirButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Show"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DefaultsButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer3"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(128, 0)
+layout_mode = 2
+text = "Reset"
+
+[node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="ValheimPathPanel" type="MarginContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="ValheimPathPanel"]
+layout_mode = 2
+color = Color(0, 0, 0, 0.862745)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ValheimPathPanel"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="ValheimPathPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ValheimPathPanel/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="ValheimPathPanel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="ValheimPathPanel/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="MarginContainer" type="MarginContainer" parent="ValheimPathPanel/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ValheimPathPanel/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Label" type="Label" parent="ValheimPathPanel/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select Valheim Installation Path"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="valheim_directory_alt" type="LineEdit" parent="ValheimPathPanel/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ValheimPathPanel/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="ValheimPathBrowseButtonAlt" type="Button" parent="ValheimPathPanel/VBoxContainer/HBoxContainer/MarginContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Browse"

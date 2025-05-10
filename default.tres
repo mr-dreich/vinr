@@ -1,0 +1,231 @@
+[gd_resource type="Theme" load_steps=29 format=3 uid="uid://dw0mdgoem0g63"]
+
+[ext_resource type="Texture2D" uid="uid://c1dvbmvtq62wg" path="res://textures/checkbox_checked.png" id="1_frq1j"]
+[ext_resource type="FontFile" uid="uid://ch58bcb8e31m3" path="res://Norse.otf" id="1_jsgte"]
+[ext_resource type="Texture2D" uid="uid://cfmpotas64tul" path="res://textures/checkbox_unchecked.png" id="2_jsgte"]
+[ext_resource type="Texture2D" uid="uid://bnls0y2secwjp" path="res://textures/arrow_down_spinbox.png" id="5_y7ndg"]
+[ext_resource type="Texture2D" uid="uid://1pfclymslf0y" path="res://textures/arrow_up_spinbox.png" id="6_3a8jl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lb50s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ir6w1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gbman"]
+bg_color = Color(0.625597, 0.625597, 0.625597, 0.054902)
+border_color = Color(0.8, 0.8, 0.8, 0.0823529)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejo0s"]
+bg_color = Color(0.625597, 0.625597, 0.625597, 0.054902)
+border_color = Color(0.8, 0.8, 0.8, 0.0823529)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mb6pw"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dqhm0"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cw4kx"]
+draw_center = false
+border_width_bottom = 1
+border_color = Color(0.581033, 0.581033, 0.581033, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dqhm0"]
+draw_center = false
+border_width_bottom = 1
+border_color = Color(0.0177324, 0.0177324, 0.0177324, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cw4kx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olmk6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64s0f"]
+bg_color = Color(1, 1, 1, 0.121569)
+border_color = Color(1, 1, 1, 0.121569)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gbman"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ejo0s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3w1p"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_av0bt"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olmk6"]
+bg_color = Color(1, 1, 1, 0.121569)
+border_color = Color(1, 1, 1, 0.121569)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_aa06h"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5m48"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y7ndg"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3a8jl"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mb6pw"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+draw_center = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lb50s"]
+content_margin_left = 8.0
+content_margin_right = 8.0
+draw_center = false
+border_width_top = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ir6w1"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+draw_center = false
+
+[resource]
+default_font = ExtResource("1_jsgte")
+default_font_size = 52
+CheckBox/colors/checkbox_checked_color = Color(1, 1, 1, 1)
+CheckBox/colors/checkbox_unchecked_color = Color(1, 1, 1, 1)
+CheckBox/colors/font_color = Color(0.803922, 0.803922, 0.803922, 1)
+CheckBox/colors/font_disabled_color = Color(0.803922, 0.803922, 0.803922, 1)
+CheckBox/colors/font_focus_color = Color(0.803922, 0.803922, 0.803922, 1)
+CheckBox/colors/font_hover_color = Color(0.803922, 0.803922, 0.803922, 1)
+CheckBox/colors/font_hover_pressed_color = Color(0.803922, 0.803922, 0.803922, 1)
+CheckBox/colors/font_outline_color = Color(0, 0, 0, 1)
+CheckBox/colors/font_pressed_color = Color(0.803922, 0.803922, 0.803922, 1)
+CheckBox/constants/check_v_offset = 0
+CheckBox/constants/h_separation = 8
+CheckBox/constants/outline_size = 0
+CheckBox/font_sizes/font_size = 38
+CheckBox/fonts/font = ExtResource("1_jsgte")
+CheckBox/icons/checked = ExtResource("1_frq1j")
+CheckBox/icons/checked_disabled = null
+CheckBox/icons/radio_checked = null
+CheckBox/icons/radio_checked_disabled = null
+CheckBox/icons/radio_unchecked = null
+CheckBox/icons/radio_unchecked_disabled = null
+CheckBox/icons/unchecked = ExtResource("2_jsgte")
+CheckBox/icons/unchecked_disabled = null
+CheckBox/styles/disabled = SubResource("StyleBoxEmpty_lb50s")
+CheckBox/styles/focus = SubResource("StyleBoxEmpty_ir6w1")
+CheckBox/styles/hover = SubResource("StyleBoxFlat_gbman")
+CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_ejo0s")
+CheckBox/styles/normal = SubResource("StyleBoxEmpty_mb6pw")
+CheckBox/styles/pressed = SubResource("StyleBoxEmpty_dqhm0")
+Label/colors/font_color = Color(0.804743, 0.804743, 0.804743, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/colors/font_shadow_color = Color(0, 0, 0, 1)
+Label/constants/line_spacing = 0
+Label/constants/outline_size = 0
+Label/constants/shadow_offset_x = 0
+Label/constants/shadow_offset_y = 0
+Label/constants/shadow_outline_size = 0
+Label/fonts/font = ExtResource("1_jsgte")
+Label/styles/focus = null
+Label/styles/normal = null
+LineEdit/colors/caret_color = Color(0.580392, 0.580392, 0.580392, 1)
+LineEdit/colors/clear_button_color = Color(0, 0, 0, 1)
+LineEdit/colors/clear_button_color_pressed = Color(0, 0, 0, 1)
+LineEdit/colors/font_color = Color(0.803922, 0.803922, 0.803922, 1)
+LineEdit/colors/font_outline_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_placeholder_color = Color(0.803922, 0.803922, 0.803922, 0.639216)
+LineEdit/colors/font_selected_color = Color(0, 0, 0, 1)
+LineEdit/colors/font_uneditable_color = Color(0, 0, 0, 1)
+LineEdit/colors/selection_color = Color(0.977937, 0.977937, 0.977937, 0.360784)
+LineEdit/constants/caret_width = 1
+LineEdit/constants/minimum_character_width = 0
+LineEdit/constants/outline_size = 0
+LineEdit/icons/clear = null
+LineEdit/styles/focus = SubResource("StyleBoxFlat_cw4kx")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_dqhm0")
+LineEdit/styles/read_only = null
+OptionButton/colors/font_color = Color(0.803922, 0.803922, 0.803922, 1)
+OptionButton/colors/font_disabled_color = Color(0.803922, 0.803922, 0.803922, 1)
+OptionButton/colors/font_focus_color = Color(0.803922, 0.803922, 0.803922, 1)
+OptionButton/colors/font_hover_color = Color(0.803922, 0.803922, 0.803922, 1)
+OptionButton/colors/font_hover_pressed_color = Color(0.803922, 0.803922, 0.803922, 1)
+OptionButton/colors/font_outline_color = Color(0, 0, 0, 1)
+OptionButton/colors/font_pressed_color = Color(0.803922, 0.803922, 0.803922, 1)
+OptionButton/constants/arrow_margin = 0
+OptionButton/constants/h_separation = 16
+OptionButton/constants/modulate_arrow = 0
+OptionButton/constants/outline_size = 0
+OptionButton/font_sizes/font_size = 52
+OptionButton/fonts/font = ExtResource("1_jsgte")
+OptionButton/icons/arrow = ExtResource("5_y7ndg")
+OptionButton/styles/disabled = null
+OptionButton/styles/disabled_mirrored = null
+OptionButton/styles/focus = null
+OptionButton/styles/hover = null
+OptionButton/styles/hover_mirrored = null
+OptionButton/styles/normal = null
+OptionButton/styles/normal_mirrored = null
+OptionButton/styles/pressed = null
+OptionButton/styles/pressed_mirrored = null
+SpinBox/colors/down_disabled_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/colors/down_hover_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/colors/down_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/colors/down_pressed_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/colors/up_disabled_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/colors/up_hover_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/colors/up_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/colors/up_pressed_icon_modulate = Color(1, 1, 1, 1)
+SpinBox/constants/buttons_vertical_separation = 0
+SpinBox/constants/buttons_width = 40
+SpinBox/constants/field_and_buttons_separation = 7
+SpinBox/constants/set_min_buttons_width_from_icons = 0
+SpinBox/icons/down = ExtResource("5_y7ndg")
+SpinBox/icons/down_disabled = ExtResource("5_y7ndg")
+SpinBox/icons/down_hover = ExtResource("5_y7ndg")
+SpinBox/icons/down_pressed = ExtResource("5_y7ndg")
+SpinBox/icons/up = ExtResource("6_3a8jl")
+SpinBox/icons/up_disabled = ExtResource("6_3a8jl")
+SpinBox/icons/up_hover = ExtResource("6_3a8jl")
+SpinBox/icons/up_pressed = ExtResource("6_3a8jl")
+SpinBox/icons/updown = null
+SpinBox/styles/down_background = SubResource("StyleBoxEmpty_cw4kx")
+SpinBox/styles/down_background_disabled = SubResource("StyleBoxEmpty_olmk6")
+SpinBox/styles/down_background_hovered = SubResource("StyleBoxFlat_64s0f")
+SpinBox/styles/down_background_pressed = SubResource("StyleBoxEmpty_gbman")
+SpinBox/styles/field_and_buttons_separator = SubResource("StyleBoxEmpty_ejo0s")
+SpinBox/styles/up_background = SubResource("StyleBoxEmpty_a3w1p")
+SpinBox/styles/up_background_disabled = SubResource("StyleBoxEmpty_av0bt")
+SpinBox/styles/up_background_hovered = SubResource("StyleBoxFlat_olmk6")
+SpinBox/styles/up_background_pressed = SubResource("StyleBoxEmpty_aa06h")
+SpinBox/styles/up_down_buttons_separator = SubResource("StyleBoxEmpty_a5m48")
+TabContainer/colors/drop_mark_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_disabled_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_hovered_color = Color(0.74558, 0.74558, 0.74558, 1)
+TabContainer/colors/font_outline_color = Color(0, 0, 0, 1)
+TabContainer/colors/font_selected_color = Color(0.803922, 0.803922, 0.803922, 1)
+TabContainer/colors/font_unselected_color = Color(0.377919, 0.377919, 0.377919, 1)
+TabContainer/constants/icon_max_width = 0
+TabContainer/constants/icon_separation = 0
+TabContainer/constants/outline_size = 0
+TabContainer/constants/side_margin = 0
+TabContainer/font_sizes/font_size = 52
+TabContainer/fonts/font = ExtResource("1_jsgte")
+TabContainer/icons/decrement = null
+TabContainer/icons/decrement_highlight = null
+TabContainer/icons/drop_mark = null
+TabContainer/icons/increment = null
+TabContainer/icons/increment_highlight = null
+TabContainer/icons/menu = null
+TabContainer/icons/menu_highlight = null
+TabContainer/styles/panel = null
+TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_y7ndg")
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_3a8jl")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_mb6pw")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_lb50s")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_ir6w1")
+TabContainer/styles/tabbar_background = null
