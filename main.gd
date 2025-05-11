@@ -27,9 +27,10 @@ const DefaultOptions: Dictionary = {
 }
 
 var _user_options: Dictionary = {}
+var _output: String = ""
 
 
-func create_script() -> void:
+func generate_output() -> void:
 	var port :=  str(" -port ",'"',_user_options.port,'"')
 	var instance_id :=  str(" -instanceid ",'"',_user_options.instance_id,'"')
 	var public := str(" -public ",_user_options.public)
@@ -52,14 +53,13 @@ func create_script() -> void:
 		setkey += str(key," ")
 	
 	var start: String = ""
-	var output: String = ""
 	var file_path: String = ""
 	var os_name: String = OS.get_name()
 	match os_name:
 		'Windows':
 			start = str("valheim_server -nographics -batchmode")
 			
-			output = str("@echo off\n\necho Starting server PRESS CTRL-C to exit\n\n",
+			_output = str("@echo off\n\necho Starting server PRESS CTRL-C to exit\n\n",
 			start,instance_id,port,public,server_name,password,world,world_seed,preset,combat,raids,death,resources,
 			setkey,save_interval,backups,backupshort,backuplong,savedir)
 			file_path = str(_user_options.valheim_directory,"vinr_start_server.bat")
@@ -67,15 +67,17 @@ func create_script() -> void:
 		'macOS':
 			start = str('"$( dirname "$0" )"',"/valheim_server/Valheim")
 			
-			output = str("#!/bin/zsh\n\necho",' "',"Starting server PRESS CMD-C to exit",'"',"\n\n",
+			_output = str("#!/bin/zsh\n\necho",' "',"Starting server PRESS CMD-C to exit",'"',"\n\n",
 			start,instance_id,port,public,server_name,password,world,world_seed,preset,combat,raids,death,resources,
 			setkey,save_interval,backups,backupshort,backuplong,savedir)
 			file_path = str(_user_options.valheim_directory,"vinr_start_server.command")
 	
 	if os_name != 'Web':
 		var file := FileAccess.open(file_path, FileAccess.WRITE)
-		file.store_string(output)
-	%OutputLog.text = output
+		file.store_string(_output)
+	
+	%OutputLog.text = _output
+	%CopyOutputButton.disabled = _output == ""
 
 
 func setup_elements() -> void:
@@ -100,11 +102,14 @@ func setup_elements() -> void:
 					else:
 						child.button_pressed = false
 	
+	%CopyOutputButton.disabled = _output == ""
+	
 	match OS.get_name():
 		'Web':
 			%valheim_directory.get_parent().hide()
 			%save_dir.get_parent().hide()
 			%OpenValheimDirButton.hide()
+			%CopyOutputButton.hide()
 
 
 func reset() -> void:
@@ -145,7 +150,7 @@ func load_settings() -> void:
 
 
 func save_settings() -> void:
-	var config := ConfigFile.new()
+	var config: ConfigFile = ConfigFile.new()
 	for key in DefaultOptions:
 		config.set_value('data', key, _user_options[key])
 	config.save(UserOptionsPath)
@@ -179,6 +184,11 @@ func _ready() -> void:
 					child.toggled.connect(_on_checkbox_toggled.bind(child))
 	
 	reset()
+	
+	if not FileAccess.file_exists(UserOptionsPath):
+		save_settings()
+		await get_tree().process_frame
+	
 	await load_settings()
 	setup_elements()
 	
@@ -219,7 +229,7 @@ func _on_defaults_button_pressed() -> void:
 
 
 func _on_create_script_button_pressed() -> void:
-	create_script()
+	generate_output()
 
 
 func _on_valheim_path_browse_button_pressed() -> void:

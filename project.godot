@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Vinr - Valheim Server Config"
 config/description="A Valheim Server Configuration Tool"
-config/version="0.0.1"
+config/version="0.0.6"
 run/main_scene="uid://da6ytqwxbuxgi"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="Vinr"
