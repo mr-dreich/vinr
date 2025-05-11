@@ -69,10 +69,9 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
 tab_alignment = 1
-current_tab = 1
+current_tab = 0
 
 [node name="Basic" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 16
 metadata/_tab_index = 0
@@ -98,7 +97,7 @@ theme_override_constants/separation = 16
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/ServerName"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Name"
@@ -120,7 +119,7 @@ caret_blink = true
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Password"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Password"
@@ -142,7 +141,7 @@ caret_blink = true
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Public"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Public"
@@ -164,7 +163,7 @@ icon_alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Basic/ScrollContainer/MarginContainer/ConfigurationOptions/Crossplay"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Crossplay"
@@ -182,6 +181,7 @@ theme_override_constants/icon_max_width = 64
 icon_alignment = 1
 
 [node name="Advanced" type="MarginContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer"]
+visible = false
 layout_mode = 2
 theme_override_constants/margin_top = 16
 metadata/_tab_index = 1
@@ -207,7 +207,7 @@ theme_override_constants/separation = 16
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/WorldName"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "World Name"
@@ -224,11 +224,32 @@ layout_mode = 2
 size_flags_horizontal = 3
 caret_blink = true
 
+[node name="Seed" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Seed"]
+custom_minimum_size = Vector2(234, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Seed"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Seed"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="seed" type="LineEdit" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Seed"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+caret_blink = true
+
 [node name="ValheimPath" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/ValheimPath"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Server path"
@@ -243,6 +264,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
 caret_blink = true
 
 [node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/ValheimPath"]
@@ -259,7 +281,7 @@ text = "Browse"
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveDir"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "World Directory"
@@ -274,6 +296,7 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 28
 caret_blink = true
 
 [node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveDir"]
@@ -290,7 +313,7 @@ text = "Browse"
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Port"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Port"
@@ -313,7 +336,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/InstanceId"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Instance Id"
@@ -335,7 +358,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/Backups"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Backups"
@@ -357,7 +380,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/SaveInterval"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Save Interval"
@@ -390,7 +413,7 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupShort"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Backup Short"
@@ -423,7 +446,7 @@ vertical_alignment = 1
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/Advanced/ScrollContainer/MarginContainer/ConfigurationOptions/BackupLong"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Backup Long"
@@ -480,7 +503,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Preset"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Preset"
@@ -519,7 +542,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Combat"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Combat"
@@ -552,7 +575,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/DeathPenalty"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Death Penalty"
@@ -587,7 +610,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Resources"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Resources"
@@ -622,7 +645,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Raids"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Raids"
@@ -657,7 +680,7 @@ layout_mode = 2
 theme_override_constants/separation = 16
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Portals"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Portals"
@@ -691,10 +714,10 @@ theme_override_constants/separation = 16
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/TabContainer/World Options/ScrollContainer/MarginContainer/ConfigurationOptions/Events/VBoxContainer"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(234, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
-text = "events"
+text = "Events"
 horizontal_alignment = 2
 vertical_alignment = 1
 
@@ -737,6 +760,12 @@ theme_override_constants/icon_max_width = 64
 text = "No Map"
 icon_alignment = 1
 
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.803922, 0.803922, 0.803922, 0.588235)
+theme_override_font_sizes/font_size = 28
+text = "Output:"
+
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 alignment = 2
@@ -751,8 +780,6 @@ theme_override_font_sizes/font_size = 22
 theme_override_styles/normal = SubResource("StyleBoxFlat_0xm2m")
 theme_override_styles/focus = SubResource("StyleBoxFlat_0xm2m")
 theme_override_styles/read_only = SubResource("StyleBoxFlat_0xm2m")
-editable = false
-context_menu_enabled = false
 emoji_menu_enabled = false
 drag_and_drop_selection_enabled = false
 empty_selection_clipboard_enabled = false
@@ -805,34 +832,42 @@ mouse_filter = 2
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
+alignment = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+layout_mode = 2
 alignment = 1
 
-[node name="CreateScriptButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+[node name="CreateScriptButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer/VBoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "Create Script"
+text = "Generate"
+
+[node name="Spacer" type="Control" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
 layout_mode = 2
 mouse_filter = 2
-alignment = 2
 
-[node name="OpenValheimDirButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="OpenValheimDirButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-text = "Show"
+text = "Open Valheim Folder"
 
-[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer2"]
-layout_mode = 2
-mouse_filter = 2
-
-[node name="DefaultsButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer3"]
+[node name="DefaultsButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer2/HBoxContainer2/VBoxContainer"]
 unique_name_in_owner = true
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
-text = "Reset"
+text = "Reset Options"
 
 [node name="Spacer2" type="Control" parent="MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 64)
