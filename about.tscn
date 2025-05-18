@@ -1,0 +1,129 @@
+[gd_scene load_steps=5 format=3 uid="uid://bi7s5gfik675h"]
+
+[ext_resource type="Script" uid="uid://c0xjm3l5xeiyw" path="res://about.gd" id="1_4q2eq"]
+[ext_resource type="Theme" uid="uid://dw0mdgoem0g63" path="res://default.tres" id="1_pp48r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pp48r"]
+draw_center = false
+border_width_bottom = 1
+border_color = Color(0.8, 0.8, 0.8, 0.121569)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pp48r"]
+
+[node name="AboutWindow" type="MarginContainer"]
+custom_minimum_size = Vector2(400, 600)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("1_pp48r")
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+script = ExtResource("1_4q2eq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(96, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 56
+text = "Vinr"
+horizontal_alignment = 1
+
+[node name="Spacer" type="Control" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 34
+text = "v"
+
+[node name="VersionLabel" type="Label" parent="VBoxContainer/HBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 42
+text = "0.0.0"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "A Valheim Server Configuration Tool"
+horizontal_alignment = 1
+
+[node name="Spacer2" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Panel" type="Panel" parent="VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(380, 1)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_pp48r")
+
+[node name="Spacer3" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Credits:"
+horizontal_alignment = 1
+
+[node name="Spacer4" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+
+[node name="Credits" type="VBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="GodotGameEngine" type="RichTextLabel" parent="VBoxContainer/Credits"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp48r")
+bbcode_enabled = true
+text = "[center][url=https://godotengine.org/]Godot[/url][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="Valheim" type="RichTextLabel" parent="VBoxContainer/Credits"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp48r")
+bbcode_enabled = true
+text = "[center][url=https://www.valheimgame.com//]Valheim[/url][/center]"
+fit_content = true
+scroll_active = false
+
+[node name="NILMO" type="RichTextLabel" parent="VBoxContainer/Credits"]
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_pp48r")
+bbcode_enabled = true
+text = "[center]NiLM0[/center]"
+fit_content = true
+scroll_active = false
