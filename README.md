@@ -10,4 +10,5 @@ Once the program knows the server installation path when you click create it wil
 Note: This tool does not manage the server, it only creates the startup script for the server.
 
 
-![SCR-20250511-hjev](https://github.com/user-attachments/assets/905f6caf-ea07-4846-b46f-37d08e4a37cf)
+
+![SCR-20250518-hskt](https://github.com/user-attachments/assets/8800c86b-529a-4991-be45-014e4a683eca)
